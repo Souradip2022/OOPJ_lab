@@ -34,7 +34,6 @@ public class Box {
       double h = in.nextDouble();
       Box vol = new Box(l, b, h);
       System.out.println("Volume of box is: " + vol.volume());
-
     }
   }
 }

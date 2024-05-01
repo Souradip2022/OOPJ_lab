@@ -1,3 +1,5 @@
+package lab_01;
+
 public class LocalVariable {
   int instanceVar1;
   String instanceVar2 = "Hello";
@@ -22,6 +24,7 @@ public class LocalVariable {
     obj.instanceVar1 = 5;
 
     LocalVariable.staticV1 = 3;
+    LocalVariable.staticV2 = 4;
 
     System.out.println("Instance variable: " + obj.instanceVar1);
     System.out.println("Static variable: " + staticV1);

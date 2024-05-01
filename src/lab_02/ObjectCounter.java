@@ -1,6 +1,5 @@
 //Program to find no. of objects created out of a class using ‘static’ modifier.
 package lab_02;
-
 import java.util.Scanner;
 
 public class ObjectCounter {

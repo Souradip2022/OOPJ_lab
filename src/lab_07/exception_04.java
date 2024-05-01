@@ -22,6 +22,7 @@ class SecException extends Exception {
 
 public class exception_04 {
   static int hr, min, sec;
+
   public static void time() {
     Scanner in = new Scanner(System.in);
 
@@ -37,29 +38,34 @@ public class exception_04 {
 
     } catch (HrsException e) {
       System.out.println(e.getMessage());
-    } finally {
-      try {
-        if (min > 60 || min < 0) {
-          throw new MinException("InvalidMinuteException: minute entered is not valid");
-        }
-      } catch (MinException e) {
-        System.out.println(e.getMessage());
+
+    }
+
+    try {
+      if (min > 60 || min < 0) {
+        throw new MinException("InvalidMinuteException: minute entered is not valid");
       }
-      try {
-        if (sec > 60 || sec < 0) {
-          throw new SecException("InvalidSecondException: second entered is not valid");
-        }
-      } catch (SecException e) {
-        System.out.println(e.getMessage());
-      } finally {
-        if (hr < 24 && hr >= 0 && min < 60 && min >= 0 && sec < 60 && sec >= 0) {
-          System.out.println("Correct time: " + hr + ":" + min + ":" + sec);
-        }
+    } catch (MinException e) {
+      System.out.println(e.getMessage());
+    }
+
+    try {
+      if (sec > 60 || sec < 0) {
+        throw new SecException("InvalidSecondException: second entered is not valid");
       }
+    } catch (SecException e) {
+      System.out.println(e.getMessage());
+    }
+
+    finally {
+      if (hr < 24 && hr >= 0 && min < 60 && min >= 0 && sec < 60 && sec >= 0) {
+        System.out.println("Correct time: " + hr + ":" + min + ":" + sec);
+      }
+      System.out.println("Time is " + hr + ":" + min + ":" + sec);
     }
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws HrsException, MinException, SecException {
     time();
   }
 }

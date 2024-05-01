@@ -1,13 +1,17 @@
 package lab_07;
 
 class CheckArgument extends Exception {
-  CheckArgument(String message) {
+  public CheckArgument(String message) {
     super(message);
   }
 }
 
 public class exception_05 {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws CheckArgument{
+    argFunction(args);
+  }
+
+  static void argFunction(String[] args){
     try {
       if (args.length < 4) {
         throw new CheckArgument("Exception occurred – CheckArgument");

@@ -63,7 +63,8 @@ public class String_01 {
           in.nextLine();
           String strIns = in.nextLine();
 
-          strIns = str + " " + strIns.trim();
+          //strIns = str + " " + strIns.trim();
+          strIns = str.concat(" " + strIns);
           System.out.println("\nFinal string after insertion: " + strIns);
 
           break;
@@ -85,7 +86,7 @@ public class String_01 {
             }
           }
 
-          if(!bl){
+          if (!bl) {
             System.out.println("Character not present");
           }
 
@@ -130,9 +131,9 @@ public class String_01 {
         default:
           System.out.println("Invalid choice");
       }
-      System.out.print("Press y to continue else press n: ");
+      System.out.print("Press y to continue else press any key: ");
       char contCheck = in.next().charAt(0);
-      if (contCheck == 'n') {
+      if (contCheck != 'y') {
         break;
       }
 

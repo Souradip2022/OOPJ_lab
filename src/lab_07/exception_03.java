@@ -12,7 +12,7 @@ class NegativeNumberException extends Exception {
 // Class with a method to process user input
 public class exception_03 {
   // Method to process user input
-  public static void ProcessInput() {
+  public static void ProcessInput(){
     Scanner in = new Scanner(System.in);
     System.out.print("Enter a number: ");
     int a = in.nextInt();
@@ -26,13 +26,14 @@ public class exception_03 {
       }
     } catch (NegativeNumberException e) {
       System.out.println("Error: " + e.getMessage());
+      e.printStackTrace();
     }
     finally {
       System.out.println("Hi Souradip!");
     }
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws NegativeNumberException {
     ProcessInput();
   }
 }

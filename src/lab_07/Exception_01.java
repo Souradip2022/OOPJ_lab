@@ -19,6 +19,7 @@ public class Exception_01 {
       System.out.println(arr1[3]);*/
     } catch (ArrayIndexOutOfBoundsException e) {
       System.out.println(e.getMessage());
+      e.printStackTrace();
     } catch (ArithmeticException e) {
       System.out.println(e.getMessage());
     } finally {
